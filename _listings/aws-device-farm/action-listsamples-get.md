@@ -10,7 +10,7 @@ produces:
 consumes:
 - application/json
 paths:
-  /?Action=ListSamples&k=1:
+  /?Action=ListSamples:
     get:
       summary: ' List Samples '
       description: Gets information about samples, given an AWS Device Farm project
