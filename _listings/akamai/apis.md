@@ -44,6 +44,24 @@ x-common:
   url: https://twitter.com/Akamai
 - type: x-website
   url: https://akamai.com
+- type: x-base
+  url: https://api.ccu.akamai.com
+- type: x-blog
+  url: https://blogs.akamai.com
+- type: x-blog-rss
+  url: http://blogs.akamai.com/feeds.html
+- type: x-crunchbase
+  url: http://www.crunchbase.com/company/akamai-technologies
+- type: x-developer
+  url: https://developer.akamai.com/
+- type: x-email
+  url: open-developer@akamai.com
+- type: x-github
+  url: https://github.com/akamai
+- type: x-twitter
+  url: https://twitter.com/Akamai
+- type: x-website
+  url: https://akamai.com
 include: []
 maintainers:
 - FN: Kin Lane
