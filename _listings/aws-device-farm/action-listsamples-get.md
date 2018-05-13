@@ -1,8 +1,9 @@
 ---
 swagger: "2.0"
 info:
-  title: AWS Device Farm API
+  title: AWS Device Farm API List Samples
   version: 1.0.0
+  description: Gets information about samples, given an AWS Device Farm project ARN.
 schemes:
 - http
 produces:
