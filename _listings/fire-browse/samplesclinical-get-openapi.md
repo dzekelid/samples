@@ -1,0 +1,86 @@
+---
+swagger: "2.0"
+x-collection-name: Fire Browse
+x-complete: 0
+info:
+  title: Fire Browse Beta API Retrieve TCGA CDEs verbatim, i.e. not normalized by
+    Firehose.
+  description: This service returns patient clinical data from TCGA, verbatim. It
+    differs from the Samples/Clinical_FH method by providing access to all TCGA CDEs
+    in their original form, not merely the subset of CDEs normalized by Firehose for
+    analyses.  Results may be selected by disease cohort, patient barcode or CDE name,
+    but at least one cohort, barcode, or CDE must be provided. When filtering by CDE
+    note that only when a patient record contains one or more of the selected CDEs
+    will it be returned. Visit the Metadata/ClinicalNames api function to see the
+    entire list of TCGA CDEs that may be queried via this method. For more information
+    on how clinical data are processed, see our pipeline documentation.
+  version: 1.1.35 (2016-09-27 10:12:23 6a47e74011281b2aa
+host: firebrowse.org
+basePath: /api/v1
+schemes:
+- http
+produces:
+- application/json
+consumes:
+- application/json
+paths:
+  /Samples/Clinical:
+    get:
+      summary: Retrieve TCGA CDEs verbatim, i.e. not normalized by Firehose.
+      description: This service returns patient clinical data from TCGA, verbatim.
+        It differs from the Samples/Clinical_FH method by providing access to all
+        TCGA CDEs in their original form, not merely the subset of CDEs normalized
+        by Firehose for analyses.  Results may be selected by disease cohort, patient
+        barcode or CDE name, but at least one cohort, barcode, or CDE must be provided.
+        When filtering by CDE note that only when a patient record contains one or
+        more of the selected CDEs will it be returned. Visit the Metadata/ClinicalNames
+        api function to see the entire list of TCGA CDEs that may be queried via this
+        method. For more information on how clinical data are processed, see our pipeline
+        documentation.
+      operationId: getSamplesClinical
+      x-api-path-slug: samplesclinical-get
+      parameters:
+      - in: query
+        name: cde_name
+        description: Retrieve results only for specified CDEs, per the Metadata/ClinicalNames
+          function
+      - in: query
+        name: cohort
+        description: Narrow search to one or more TCGA disease cohorts from the scrollable
+          list
+      - in: query
+        name: format
+        description: Format of result
+      - in: query
+        name: page
+        description: Which page (slice) of entire results set should be returned
+      - in: query
+        name: page_size
+        description: Number of records per page of results
+      - in: query
+        name: sort_by
+        description: Which column in the results should be used for sorting paginated
+          results?
+      - in: query
+        name: tcga_participant_barcode
+        description: Comma separated list of TCGA participant barcodes (e
+      responses:
+        200:
+          description: OK
+      tags:
+      - Samples
+      - Clinical
+x-streamrank:
+  polling_total_time_average: 0
+  polling_size_download_average: 0
+  streaming_total_time_average: 0
+  streaming_size_download_average: 0
+  change_yes: 0
+  change_no: 0
+  time_percentage: 0
+  size_percentage: 0
+  change_percentage: 0
+  last_run: ""
+  days_run: 0
+  minute_run: 0
+---
